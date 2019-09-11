@@ -1,0 +1,1116 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><style>#right-panel {
+    background-color: #fff;
+}
+
+#right-panel .cover-top {
+    background: linear-gradient(to bottom, #fff 50%, transparent);
+}
+
+#cover-bottom #cover-bottom-background-right {
+    background: #fff;
+}
+
+@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+#container {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #373737;
+  font-family: "Roboto", "Noto Sans", "Ubuntu", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif, "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft Yahei";
+  font-size: 14px;
+  line-height: 2;
+  word-wrap: break-word;
+  background-color: #fff;
+}
+
+#container a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+#container a:active,
+#container a:hover {
+  outline-width: 0;
+}
+
+#container strong {
+  font-weight: inherit;
+}
+
+#container strong {
+  font-weight: bolder;
+}
+
+#container h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+#container img {
+  border-style: none;
+}
+
+#container svg:not(:root) {
+  overflow: hidden;
+}
+
+#container code,
+#container kbd,
+#container pre {
+  font-family: "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  font-size: 1em;
+}
+
+#container hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+#container input {
+  font: inherit;
+  margin: 0;
+}
+
+#container input {
+  overflow: visible;
+}
+
+#container button:-moz-focusring,
+#container [type="button"]:-moz-focusring,
+#container [type="reset"]:-moz-focusring,
+#container [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+#container [type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+#container table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+#container td,
+#container th {
+  padding: 0;
+}
+
+#container * {
+  box-sizing: border-box;
+}
+
+#container input {
+  font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#container a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+#container a:hover,
+#container a:active {
+  text-decoration: underline;
+}
+
+#container hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#container hr::before {
+  display: table;
+  content: "";
+}
+
+#container hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+#container h1,
+#container h2,
+#container h3,
+#container h4,
+#container h5,
+#container h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+#container h1 {
+  font-size: 30px;
+}
+
+#container h2 {
+  font-size: 21px;
+}
+
+#container h3 {
+  font-size: 16px;
+}
+
+#container h4 {
+  font-size: 14px;
+}
+
+#container h5 {
+  font-size: 12px;
+}
+
+#container h6 {
+  font-size: 11px;
+}
+
+#container p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#container blockquote {
+  margin: 0;
+}
+
+#container ul,
+#container ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#container ol ol,
+#container ul ol {
+  list-style-type: lower-roman;
+}
+
+#container ul ul ol,
+#container ul ol ol,
+#container ol ul ol,
+#container ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+#container dd {
+  margin-left: 0;
+}
+
+#container code {
+  font-family: "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  font-size: 12px;
+}
+
+#container pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+}
+
+#container .pl-0 {
+  padding-left: 0 !important;
+}
+
+#container .pl-1 {
+  padding-left: 3px !important;
+}
+
+#container .pl-2 {
+  padding-left: 6px !important;
+}
+
+#container .pl-3 {
+  padding-left: 12px !important;
+}
+
+#container .pl-4 {
+  padding-left: 24px !important;
+}
+
+#container .pl-5 {
+  padding-left: 36px !important;
+}
+
+#container .pl-6 {
+  padding-left: 48px !important;
+}
+
+#container .form-select::-ms-expand {
+  opacity: 0;
+}
+
+#container:before {
+  display: table;
+  content: "";
+}
+
+#container:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+#container>*:first-child {
+  margin-top: 0 !important;
+}
+
+#container>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+#container a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+#container .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+#container .anchor:focus {
+  outline: none;
+}
+
+#container h1,
+#container h2,
+#container h3,
+#container h4,
+#container h5,
+#container h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+#container h1 .octicon-link,
+#container h2 .octicon-link,
+#container h3 .octicon-link,
+#container h4 .octicon-link,
+#container h5 .octicon-link,
+#container h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+#container h1:hover .anchor,
+#container h2:hover .anchor,
+#container h3:hover .anchor,
+#container h4:hover .anchor,
+#container h5:hover .anchor,
+#container h6:hover .anchor {
+  text-decoration: none;
+}
+
+#container h1:hover .anchor .octicon-link,
+#container h2:hover .anchor .octicon-link,
+#container h3:hover .anchor .octicon-link,
+#container h4:hover .anchor .octicon-link,
+#container h5:hover .anchor .octicon-link,
+#container h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+#container h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+#container h1 .anchor {
+  line-height: 1;
+}
+
+#container h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+#container h2 .anchor {
+  line-height: 1;
+}
+
+#container h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+#container h3 .anchor {
+  line-height: 1.2;
+}
+
+#container h4 {
+  font-size: 1.25em;
+}
+
+#container h4 .anchor {
+  line-height: 1.2;
+}
+
+#container h5 {
+  font-size: 1em;
+}
+
+#container h5 .anchor {
+  line-height: 1.1;
+}
+
+#container h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+#container h6 .anchor {
+  line-height: 1.1;
+}
+
+#container p,
+#container blockquote,
+#container ul,
+#container ol,
+#container dl,
+#container table,
+#container pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+#container hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+#container ul,
+#container ol {
+  padding-left: 2em;
+}
+
+#container ul ul,
+#container ul ol,
+#container ol ol,
+#container ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#container li>p {
+  margin-top: 16px;
+}
+
+#container dl {
+  padding: 0;
+}
+
+#container dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#container dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+#container blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+#container blockquote>:first-child {
+  margin-top: 0;
+}
+
+#container blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+#container table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+#container table th {
+  font-weight: bold;
+}
+
+#container table th,
+#container table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+#container table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+#container table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+#container img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+#container code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+#container code:before,
+#container code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+#container pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+#container .highlight {
+  margin-bottom: 16px;
+}
+
+#container .highlight pre,
+#container pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+#container .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+#container pre {
+  word-wrap: normal;
+}
+
+#container pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+#container pre code:before,
+#container pre code:after {
+  content: normal;
+}
+
+#container kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+#container .pl-c {
+  color: #969896;
+}
+
+#container .pl-c1,
+#container .pl-s .pl-v {
+  color: #0086b3;
+}
+
+#container .pl-e,
+#container .pl-en {
+  color: #795da3;
+}
+
+#container .pl-s .pl-s1,
+#container .pl-smi {
+  color: #333;
+}
+
+#container .pl-ent {
+  color: #63a35c;
+}
+
+#container .pl-k {
+  color: #a71d5d;
+}
+
+#container .pl-pds,
+#container .pl-s,
+#container .pl-s .pl-pse .pl-s1,
+#container .pl-sr,
+#container .pl-sr .pl-cce,
+#container .pl-sr .pl-sra,
+#container .pl-sr .pl-sre {
+  color: #183691;
+}
+
+#container .pl-v {
+  color: #ed6a43;
+}
+
+#container .pl-id {
+  color: #b52a1d;
+}
+
+#container .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+#container .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+#container .pl-ml {
+  color: #693a17;
+}
+
+#container .pl-mh,
+#container .pl-mh .pl-en,
+#container .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+#container .pl-mq {
+  color: #008080;
+}
+
+#container .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+#container .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+#container .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+#container .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+#container .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+#container .pl-mo {
+  color: #1d3e81;
+}
+
+#container kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+#container .full-commit .btn-outline:not(:disabled):hover {
+  color: #4078c0;
+  border: 1px solid #4078c0;
+}
+
+#container :checked+.radio-label {
+  position: relative;
+  z-index: 1;
+  border-color: #4078c0;
+}
+
+#container .octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+#container .task-list-item {
+  list-style-type: none;
+}
+
+#container .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+#container .task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+#container hr {
+  border-bottom-color: #eee;
+}
+</style><style>/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+</style></head><body id="container" class="export export-html"><span i="3"><h1 id="-redis-https-zh-wikipedia-org-wiki-redis-"><a href="https://zh.wikipedia.org/wiki/Redis">Redis</a></h1>
+</span><span i="4"><h4 id="redis-ansi-c-">Redis是一個使用ANSI C編寫的開源、支援網路、基於記憶體、</h4>
+</span><span i="6"><h4 id="-redis-">可選永續性的鍵值對儲存資料庫。Redis是最流行的鍵值對儲存資料庫。</h4>
+</span><span i="8"><p><a href="https://zh.wikipedia.org/wiki/Redis#%E6%94%AF%E6%8C%81%E8%AF%AD%E8%A8%80">支援語言</a></p>
+</span><span i="10"><h4 id="python-">Python簡單範例</h4>
+</span><span i="11"><hr>
+</span><span i="12"><pre><code><span class="hljs-comment"># coding:utf-8</span>
+import redis
+
+<span class="hljs-comment"># lredis-server保持开启状态 如果在客户端设置了密码 添加password=密码即可</span>
+pool = redis.ConnectionPool(host=<span class="hljs-string">'127.0.0.1'</span>, port=<span class="hljs-number">6379</span>, db=<span class="hljs-number">0</span>)
+r = redis.StrictRedis(connection_pool=pool)
+<span class="hljs-comment"># 字符串</span>
+r.<span class="hljs-keyword">set</span>(<span class="hljs-string">'test'</span>, <span class="hljs-string">'aaa'</span>)
+print r.get(<span class="hljs-string">'test'</span>)
+<span class="hljs-comment"># 列表</span>
+<span class="hljs-comment"># 注意python、lrange两个range的范围</span>
+x = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> x in range(<span class="hljs-number">0</span>, <span class="hljs-number">11</span>):
+    r.lpush(<span class="hljs-string">'list'</span>, x)
+    x = x + <span class="hljs-number">1</span>
+print r.<span class="hljs-keyword">lrange</span>(<span class="hljs-string">'list'</span>, <span class="hljs-string">'0'</span>, <span class="hljs-string">'10'</span>)
+
+<span class="hljs-comment"># 雜湊(哈希)</span>
+dict_hash = {<span class="hljs-string">'name'</span>: <span class="hljs-string">'tang'</span>, <span class="hljs-string">'password'</span>: <span class="hljs-string">'tang_passwd'</span>}
+r.hmset(<span class="hljs-string">'hash_test'</span>, dict_hash)
+print r.hgetall(<span class="hljs-string">'hash_test'</span>)
+
+<span class="hljs-comment"># 集合</span>
+r.sadd(<span class="hljs-string">'set_test'</span>, <span class="hljs-string">'aaa'</span>, <span class="hljs-string">'bbb'</span>)
+r.sadd(<span class="hljs-string">'set_test'</span>, <span class="hljs-string">'ccc'</span>)
+r.sadd(<span class="hljs-string">'set_test'</span>, <span class="hljs-string">'ddd'</span>)
+print r.smembers(<span class="hljs-string">'set_test'</span>)
+
+<span class="hljs-comment"># 有序集</span>
+r.zadd(<span class="hljs-string">'zset_test'</span>, {<span class="hljs-string">'aaa'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'bbb'</span>: <span class="hljs-number">1</span>})
+r.zadd(<span class="hljs-string">'zset_test'</span>, {<span class="hljs-string">'ccc'</span>: <span class="hljs-number">1</span>})
+r.zadd(<span class="hljs-string">'zset_test'</span>, {<span class="hljs-string">'ddd'</span>: <span class="hljs-number">1</span>})
+print r.zrange(<span class="hljs-string">'zset_test'</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>)
+</code></pre></span><span i="48"><h4 id="-">資料模型</h4>
+</span><span i="49"><hr>
+</span><span i="50"><h5 id="redis-">Redis的外圍由一個鍵、值對映的字典構成。與其他非關係型資料庫主要不同在於：</h5>
+</span><span i="52"><h5 id="redis-">Redis中值的類型不僅限於字串，還支援如下抽象資料類型：</h5>
+</span><span i="53"><ul>
+<li><span i="53">字串列表</span></li>
+<li><span i="54">無序不重複的字串集合</span></li>
+<li><span i="55">有序不重複的字串集合</span></li>
+<li><span i="56">鍵、值都為字串的雜湊表</span><span i="57"><h5 id="-">值的類型決定了值本身支援的操作。</h5>
+</span></li>
+</ul>
+</span><span i="59"><h5 id="redis-">Redis支援不同無序、有序的列表，無序、有序的集合間的交集、並集等進階伺服器端原子操作。</h5>
+</span><span i="61"><h4 id="-">持久化</h4>
+</span><span i="62"><hr>
+</span><span i="63"><h5 id="redis-">Redis通常將全部的資料儲存在記憶體中。</h5>
+</span><span i="65"><h5 id="2-4-">2.4版本後可組態為使用虛擬記憶體，一部分資料集儲存在硬碟上，但這個特性廢棄了。</h5>
+</span><span i="67"><h5 id="-">目前通過兩種方式實現持久化：</h5>
+</span><span i="68"><ul>
+<li><span i="68">使用快照，一種半持久耐用模式。不時的將資料集以非同步方式從記憶體以RDB格式寫入硬碟。</span></li>
+<li><span i="69">1.1版本開始使用更安全的AOF格式替代，一種只能追加的紀錄檔類型。將資料集修改操作記錄起來。Redis能夠在後台對只可追加的記錄作修改來避免無限增長的紀錄檔。</span></li>
+</ul>
+</span><span i="72"><h4 id="-">同步</h4>
+</span><span i="73"><hr>
+</span><span i="74"><h5 id="redis-">Redis支援主從同步。資料可以從主伺服器向任意數量的從伺服器上同步，</h5>
+</span><span i="76"><h5 id="-">從伺服器可以是關聯其他從伺服器的主伺服器。</h5>
+</span><span i="78"><h5 id="-redis-">這使得Redis可執行單層樹複製。從盤可以有意無意的對資料進行寫操作。</h5>
+</span><span i="80"><h5 id="-">由於完全實現了發布/訂閱機制，使得從資料庫在任何地方同步樹時，</h5>
+</span><span i="82"><h5 id="-">可訂閱一個頻道並接收主伺服器完整的訊息發布記錄。同步對讀取操作的可延伸性和資料冗餘很有幫助。</h5>
+</span><span i="84"><h4 id="-">效能</h4>
+</span><span i="85"><hr>
+</span><span i="86"><h5 id="-redis-">當資料依賴不再需要，Redis這種基於記憶體的性質，</h5>
+</span><span i="88"><h5 id="-">與在執行一個事務時將每個變化都寫入硬碟的資料庫系統相比就顯得執行效率非常高。</h5>
+</span><span i="90"><h5 id="-">寫與讀操作速度沒有明顯差別。</h5>
+</span><span i="92"><h3 id="-redis-ubuntu-18-04-">安裝 redis (以 Ubuntu 18.04 為例)</h3>
+</span><span i="93"><hr>
+</span><span i="94"><pre><code>$ sudo apt-get install redis-server
+$ sudo systemctl status redis (檢測 redis 服務狀態)
+$ redis-cli
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> PING (檢測 redis 服務是否啟動)
+PONG
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> CONFIG GET * (使用 * 號獲取所有配置項)
+<span class="hljs-number">1</span>) <span class="hljs-string">"dbfilename"</span>
+<span class="hljs-number">2</span>) <span class="hljs-string">"dump.rdb"</span>
+<span class="hljs-number">3</span>) <span class="hljs-string">"requirepass"</span>
+<span class="hljs-number">4</span>) <span class="hljs-string">""</span>
+<span class="hljs-number">5</span>) <span class="hljs-string">"masterauth"</span>
+<span class="hljs-number">6</span>) <span class="hljs-string">""</span>
+<span class="hljs-number">7</span>) <span class="hljs-string">"cluster-announce-ip"</span>
+<span class="hljs-number">8</span>) <span class="hljs-string">""</span>
+<span class="hljs-number">9</span>) <span class="hljs-string">"unixsocket"</span>
+...
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> EXIT
+</code></pre></span><span i="113"><h3 id="redis-">Redis 數據類型</h3>
+</span><span i="114"><hr>
+</span><span i="115"><ul>
+<li><span i="115"><p>string（字串）</p>
+</span><span i="116"><blockquote>
+<span i="116"><p>string 是 redis 最基本的類型，你可以理解成與 Memcached 一模一樣的類型，一個 key 對應一個 value。</p>
+</span><span i="117"><pre><code>$ redis-cli
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> SET name walter
+OK
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> GET name
+<span class="hljs-string">"walter"</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> DEL name
+(integer) <span class="hljs-number">1</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> GET name
+(<span class="hljs-literal">nil</span>)
+</code></pre></span></blockquote>
+</span></li>
+<li><span i="128"><p>hash（雜湊(哈希)）</p>
+</span><span i="129"><blockquote>
+<span i="130"><p>Redis hash 是一個鍵值(key=&gt;value)對集合。
+Redis hash 是一個 string 類型的 field 和 value 的映射表，hash 特別適合用於存儲對象。</p>
+</span><span i="131"><pre><code>$ redis-cli
+<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">6379</span>&gt; HMSET <span class="hljs-keyword">user</span> <span class="hljs-title">id</span> <span class="hljs-number">1</span> name walter
+OK
+<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">6379</span>&gt; HMGET <span class="hljs-keyword">user</span> <span class="hljs-title">id</span>
+<span class="hljs-number">1</span>) <span class="hljs-string">"1"</span>
+<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">6379</span>&gt; HMGET <span class="hljs-keyword">user</span> <span class="hljs-title">name</span>
+<span class="hljs-number">1</span>) <span class="hljs-string">"walter"</span>
+<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">6379</span>&gt; DEL <span class="hljs-keyword">user</span>
+<span class="hljs-title">(integer</span>) <span class="hljs-number">1</span>
+<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">6379</span>&gt; HMGET <span class="hljs-keyword">user</span> <span class="hljs-title">id</span>
+<span class="hljs-number">1</span>) (nil)
+</code></pre></span></blockquote>
+</span></li>
+<li><span i="143">list（列表）</span><span i="144"><blockquote>
+<span i="144"><p>Redis 列表是簡單的字符串列表，按照插入順序排序。你可以添加一個元素到列表的頭部（左邊）或者尾部（右邊）。</p>
+</span><span i="145"><pre><code>$ redis-cli
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> LPUSH id <span class="hljs-number">1</span>
+(integer) <span class="hljs-number">1</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> LPUSH id <span class="hljs-number">2</span> <span class="hljs-number">3</span>
+(integer) <span class="hljs-number">3</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> LRANGE id <span class="hljs-number">1</span> <span class="hljs-number">3</span>
+<span class="hljs-number">1</span>) <span class="hljs-string">"2"</span>
+<span class="hljs-number">2</span>) <span class="hljs-string">"1"</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> LRANGE id <span class="hljs-number">0</span> <span class="hljs-number">2</span>
+<span class="hljs-number">1</span>) <span class="hljs-string">"3"</span>
+<span class="hljs-number">2</span>) <span class="hljs-string">"2"</span>
+<span class="hljs-number">3</span>) <span class="hljs-string">"1"</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> RPUSH id <span class="hljs-number">4</span>
+(integer) <span class="hljs-number">4</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> LRANGE id <span class="hljs-number">0</span> <span class="hljs-number">3</span>
+<span class="hljs-number">1</span>) <span class="hljs-string">"3"</span>
+<span class="hljs-number">2</span>) <span class="hljs-string">"2"</span>
+<span class="hljs-number">3</span>) <span class="hljs-string">"1"</span>
+<span class="hljs-number">4</span>) <span class="hljs-string">"4"</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> DEL id
+(integer) <span class="hljs-number">1</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> LRANGE id <span class="hljs-number">0</span> <span class="hljs-number">3</span>
+(empty list <span class="hljs-keyword">or</span> set)
+</code></pre></span></blockquote>
+</span></li>
+<li><span i="169"><p>set（無序不重複的字串集合）</p>
+</span><span i="170"><blockquote>
+<span i="170"><p>Redis的Set是string類型的無序集合。</p>
+</span></blockquote>
+</span><span i="173"><pre><code>$ redis-cli
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> SADD id <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>
+(integer) <span class="hljs-number">3</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> SMEMBERS id
+<span class="hljs-number">1</span>) <span class="hljs-string">"1"</span>
+<span class="hljs-number">2</span>) <span class="hljs-string">"2"</span>
+<span class="hljs-number">3</span>) <span class="hljs-string">"3"</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> DEL id
+(integer) <span class="hljs-number">1</span>
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> SMEMBERS id
+(empty list <span class="hljs-keyword">or</span> set)
+</code></pre></span></li>
+<li><span i="185"><p>zset (有序不重複的字串集合)</p>
+</span><span i="186"><blockquote>
+<span i="186"><p>Redis zset 和 set 一樣也是string類型元素的集合，且不允許重複的成員。不同的是每個元素都會關聯一個double類型的 score。</p>
+</span></blockquote>
+</span><span i="189"><pre><code>$ redis-<span class="hljs-keyword">cli</span>
+<span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; ZADD score <span class="hljs-number">10</span> walter
+(integer) <span class="hljs-number">1</span>
+<span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; ZADD score <span class="hljs-number">20</span> jack
+(integer) <span class="hljs-number">1</span>
+<span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; ZADD score <span class="hljs-number">25</span> tom
+(integer) <span class="hljs-number">1</span>
+<span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; ZRANGEBYSCORE score -<span class="hljs-meta">inf</span> +<span class="hljs-meta">inf</span>
+<span class="hljs-number">1</span>) <span class="hljs-string">"walter"</span>
+<span class="hljs-number">2</span>) <span class="hljs-string">"jack"</span>
+<span class="hljs-number">3</span>) <span class="hljs-string">"tom"</span>
+<span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; ZRANGEBYSCORE score -<span class="hljs-meta">inf</span> +<span class="hljs-meta">inf</span> withscores
+<span class="hljs-number">1</span>) <span class="hljs-string">"walter"</span>
+<span class="hljs-number">2</span>) <span class="hljs-string">"10"</span>
+<span class="hljs-number">3</span>) <span class="hljs-string">"jack"</span>
+<span class="hljs-number">4</span>) <span class="hljs-string">"20"</span>
+<span class="hljs-number">5</span>) <span class="hljs-string">"tom"</span>
+<span class="hljs-number">6</span>) <span class="hljs-string">"25"</span>
+<span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; ZADD score <span class="hljs-number">20</span> peter
+(integer) <span class="hljs-number">1</span>
+<span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; ZRANGEBYSCORE score -<span class="hljs-meta">inf</span> +<span class="hljs-meta">inf</span> withscores
+<span class="hljs-number">1</span>) <span class="hljs-string">"walter"</span>
+<span class="hljs-number">2</span>) <span class="hljs-string">"10"</span>
+<span class="hljs-number">3</span>) <span class="hljs-string">"jack"</span>
+<span class="hljs-number">4</span>) <span class="hljs-string">"20"</span>
+<span class="hljs-number">5</span>) <span class="hljs-string">"peter"</span>
+<span class="hljs-number">6</span>) <span class="hljs-string">"20"</span>
+<span class="hljs-number">7</span>) <span class="hljs-string">"tom"</span>
+<span class="hljs-number">8</span>) <span class="hljs-string">"25"</span>
+</code></pre></span></li>
+</ul>
+</span><span i="221"><h3 id="redis-">Redis 命令</h3>
+</span><span i="222"><hr>
+</span><span i="223"><h4 id="-">語法</h4>
+</span><span i="224"><blockquote>
+<span i="224"><p>Redis 客戶端的基本語法為：</p>
+</span></blockquote>
+</span><span i="226"><pre><code>  $ redis-<span class="hljs-keyword">cli</span>
+  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; PING
+  PONG
+  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt;
+</code></pre></span><span i="232"><blockquote>
+<span i="232"><p>在以上實例中我們連接到本地的 redis 服務並執行 PING 命令，該命令用於檢測 redis 服務是否啟動。</p>
+</span></blockquote>
+</span><span i="234"><h4 id="-">在遠程服務上執行命令</h4>
+</span><span i="235"><blockquote>
+<span i="235"><p>如果需要在遠程 redis 服務上執行命令，同樣我們使用的也是 redis-cli 命令。</p>
+</span></blockquote>
+</span><span i="237"><pre><code>  $ redis-cli -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> -p <span class="hljs-number">6379</span>
+  <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">6379</span>&gt; PING
+  PONG
+  <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">6379</span>&gt; INFO
+  <span class="hljs-meta"># Server</span>
+<span class="hljs-symbol">  redis_version:</span><span class="hljs-number">4.0</span><span class="hljs-number">.9</span>
+<span class="hljs-symbol">  redis_git_sha1:</span><span class="hljs-number">00000000</span>
+<span class="hljs-symbol">  redis_git_dirty:</span><span class="hljs-number">0</span>
+<span class="hljs-symbol">  redis_build_id:</span><span class="hljs-number">9435</span>c3c2879311f3
+<span class="hljs-symbol">  redis_mode:</span>standalone
+<span class="hljs-symbol">  os:</span>Linux <span class="hljs-number">5.0</span><span class="hljs-number">.0</span><span class="hljs-number">-27</span>-generic x86_64
+<span class="hljs-symbol">  arch_bits:</span><span class="hljs-number">64</span>
+<span class="hljs-symbol">  multiplexing_api:</span>epoll
+  ... 以下略過
+</code></pre></span><span i="254"><h4 id="redis-">Redis 安全</h4>
+</span><span i="255"><blockquote>
+<span i="255"><p>我們可以通過 redis 的配置文件設置密碼參數，這樣客戶端連接到 redis 服務就需要密碼驗證，這樣可以讓你的 redis 服務更安全。</p>
+</span><span i="257"><p>默認情況下 requirepass 參數是空的，這就意味著你無需通過密碼驗證就可以連接到 redis 服務。</p>
+</span><span i="259"><p>你可以通過以下命令來修改該參數：</p>
+</span><span i="260"><pre><code>  $ redis-<span class="hljs-keyword">cli</span>
+  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt;  CONFIG get requirepass
+  <span class="hljs-number">1</span>) <span class="hljs-string">"requirepass"</span>
+  <span class="hljs-number">2</span>) <span class="hljs-string">""</span>
+</code></pre></span><span i="267"><p>設置密碼後，客戶端連接 redis 服務就需要密碼驗證，否則無法執行命令。</p>
+</span><span i="268"><pre><code>  $
+  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; CONFIG set requirepass <span class="hljs-string">"mypassword"</span>
+  OK
+  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt;  CONFIG get requirepass
+  (error) NOAUTH Authentication required.
+  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; AUTH <span class="hljs-string">"mypassword"</span>
+  OK
+  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt;  CONFIG get requirepass
+  <span class="hljs-number">1</span>) <span class="hljs-string">"requirepass"</span>
+  <span class="hljs-number">2</span>) <span class="hljs-string">"mypassword"</span>
+</code></pre></span></blockquote>
+</span><span i="281"><h4 id="redis-">Redis 性能測試</h4>
+</span><span i="282"><hr>
+</span><span i="283"><ul>
+<li><span i="283">Redis 性能測試是通過同時執行多個命令實現的。</span></li>
+<li><span i="284">Redis 性能測試的基本命令如下：</span><span i="285"><pre><code><span class="hljs-symbol">$</span> redis-benchmark [<span class="hljs-keyword">option</span>] [<span class="hljs-keyword">option</span> value]
+</code></pre></span></li>
+</ul>
+</span><span i="289"><h5 id="-">實例</h5>
+</span><span i="290"><blockquote>
+<span i="290"><p>測試環境如下:</p>
+</span><span i="291"><pre><code>測試環境如下:
+</code></pre></span><span i="294"><p>  ＄
+  OS: Ubuntu 18.04 bionic
+  Kernel: x86_64 Linux 5.0.0-27-generic
+  Shell: fish 2.7.1
+  CPU: Intel Core i5-8265U @ 8x 3.9GHz [53.0°C]
+  GPU: Mesa DRI Intel(R) HD Graphics (Whiskey Lake 3x8 GT2)
+  RAM: 4088MiB / 11857MiB</p>
+</span><span i="301"><pre><code>  $
+<span class="hljs-symbol">  OS:</span> Ubuntu <span class="hljs-number">18.04</span> bionic
+<span class="hljs-symbol">  Kernel:</span> x86_64 Linux <span class="hljs-number">5.0</span><span class="hljs-number">.0</span><span class="hljs-number">-27</span>-generic
+<span class="hljs-symbol">  Shell:</span> fish <span class="hljs-number">2.7</span><span class="hljs-number">.1</span>
+<span class="hljs-symbol">  CPU:</span> Intel Core i5<span class="hljs-number">-8265</span>U @ <span class="hljs-number">8</span>x <span class="hljs-number">3.9</span>GHz [<span class="hljs-number">53.0</span>°C]
+<span class="hljs-symbol">  GPU:</span> Mesa DRI Intel(R) HD Graphics (Whiskey Lake <span class="hljs-number">3</span>x8 GT2)
+<span class="hljs-symbol">  RAM:</span> <span class="hljs-number">4088</span>MiB / <span class="hljs-number">11857</span>MiB
+</code></pre></span><span i="310"><p>以下實例同時執行 10000 個請求來檢測性能：</p>
+</span><span i="311"><pre><code>$ redis-benchmark -n 10000  -q
+PING_INLINE: 89285.71 requests per second
+PING_BULK: 151515.16 requests per second
+<span class="hljs-keyword">SET</span>: <span class="hljs-number">151515.16</span> requests per <span class="hljs-keyword">second</span>
+<span class="hljs-keyword">GET</span>: <span class="hljs-number">149253.73</span> requests per <span class="hljs-keyword">second</span>
+INCR: <span class="hljs-number">147058.81</span> requests per <span class="hljs-keyword">second</span>
+LPUSH: <span class="hljs-number">151515.16</span> requests per <span class="hljs-keyword">second</span>
+RPUSH: <span class="hljs-number">131578.95</span> requests per <span class="hljs-keyword">second</span>
+LPOP: <span class="hljs-number">131578.95</span> requests per <span class="hljs-keyword">second</span>
+RPOP: <span class="hljs-number">149253.73</span> requests per <span class="hljs-keyword">second</span>
+SADD: <span class="hljs-number">147058.81</span> requests per <span class="hljs-keyword">second</span>
+HSET: <span class="hljs-number">144927.55</span> requests per <span class="hljs-keyword">second</span>
+SPOP: <span class="hljs-number">149253.73</span> requests per <span class="hljs-keyword">second</span>
+LPUSH (needed <span class="hljs-keyword">to</span> <span class="hljs-keyword">benchmark</span> LRANGE): <span class="hljs-number">144927.55</span> requests per <span class="hljs-keyword">second</span>
+LRANGE_100 (<span class="hljs-keyword">first</span> <span class="hljs-number">100</span> elements): <span class="hljs-number">140845.06</span> requests per <span class="hljs-keyword">second</span>
+LRANGE_300 (<span class="hljs-keyword">first</span> <span class="hljs-number">300</span> elements): <span class="hljs-number">147058.81</span> requests per <span class="hljs-keyword">second</span>
+LRANGE_500 (<span class="hljs-keyword">first</span> <span class="hljs-number">450</span> elements): <span class="hljs-number">147058.81</span> requests per <span class="hljs-keyword">second</span>
+LRANGE_600 (<span class="hljs-keyword">first</span> <span class="hljs-number">600</span> elements): <span class="hljs-number">149253.73</span> requests per <span class="hljs-keyword">second</span>
+MSET (<span class="hljs-number">10</span> <span class="hljs-keyword">keys</span>): <span class="hljs-number">125000.00</span> requests per <span class="hljs-keyword">second</span>
+</code></pre></span><span i="332"><p>以下實例我們使用了多個參數來測試 redis 性能：</p>
+</span><span i="333"><pre><code>  <span class="hljs-symbol">$</span> edis-benchmark -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> -p <span class="hljs-number">6379</span> -t <span class="hljs-keyword">set</span>,lpush <span class="hljs-comment">-n 10000 -q</span>
+  <span class="hljs-keyword">SET</span>: 113636.37 requests <span class="hljs-comment">per second</span>
+  LPUSH: 153846.16 requests <span class="hljs-comment">per second</span>
+</code></pre></span></blockquote>
+</span></body>
+</html>
