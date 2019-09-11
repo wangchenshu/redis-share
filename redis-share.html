@@ -1072,23 +1072,15 @@ OK
 </span><span i="289"><h5 id="-">實例</h5>
 </span><span i="290"><blockquote>
 <span i="290"><p>測試環境如下:</p>
-</span><span i="291"><pre><code>測試環境如下:
-</code></pre></span><span i="294"><p>  ＄
-  OS: Ubuntu 18.04 bionic
-  Kernel: x86_64 Linux 5.0.0-27-generic
-  Shell: fish 2.7.1
-  CPU: Intel Core i5-8265U @ 8x 3.9GHz [53.0°C]
-  GPU: Mesa DRI Intel(R) HD Graphics (Whiskey Lake 3x8 GT2)
-  RAM: 4088MiB / 11857MiB</p>
-</span><span i="301"><pre><code>  $
+</span><span i="291"><pre><code>  ＄
 <span class="hljs-symbol">  OS:</span> Ubuntu <span class="hljs-number">18.04</span> bionic
 <span class="hljs-symbol">  Kernel:</span> x86_64 Linux <span class="hljs-number">5.0</span><span class="hljs-number">.0</span><span class="hljs-number">-27</span>-generic
 <span class="hljs-symbol">  Shell:</span> fish <span class="hljs-number">2.7</span><span class="hljs-number">.1</span>
 <span class="hljs-symbol">  CPU:</span> Intel Core i5<span class="hljs-number">-8265</span>U @ <span class="hljs-number">8</span>x <span class="hljs-number">3.9</span>GHz [<span class="hljs-number">53.0</span>°C]
 <span class="hljs-symbol">  GPU:</span> Mesa DRI Intel(R) HD Graphics (Whiskey Lake <span class="hljs-number">3</span>x8 GT2)
 <span class="hljs-symbol">  RAM:</span> <span class="hljs-number">4088</span>MiB / <span class="hljs-number">11857</span>MiB
-</code></pre></span><span i="310"><p>以下實例同時執行 10000 個請求來檢測性能：</p>
-</span><span i="311"><pre><code>$ redis-benchmark -n 10000  -q
+</code></pre></span><span i="300"><p>以下實例同時執行 10000 個請求來檢測性能：</p>
+</span><span i="301"><pre><code>$ redis-benchmark -n 10000  -q
 PING_INLINE: 89285.71 requests per second
 PING_BULK: 151515.16 requests per second
 <span class="hljs-keyword">SET</span>: <span class="hljs-number">151515.16</span> requests per <span class="hljs-keyword">second</span>
@@ -1107,8 +1099,8 @@ LRANGE_300 (<span class="hljs-keyword">first</span> <span class="hljs-number">30
 LRANGE_500 (<span class="hljs-keyword">first</span> <span class="hljs-number">450</span> elements): <span class="hljs-number">147058.81</span> requests per <span class="hljs-keyword">second</span>
 LRANGE_600 (<span class="hljs-keyword">first</span> <span class="hljs-number">600</span> elements): <span class="hljs-number">149253.73</span> requests per <span class="hljs-keyword">second</span>
 MSET (<span class="hljs-number">10</span> <span class="hljs-keyword">keys</span>): <span class="hljs-number">125000.00</span> requests per <span class="hljs-keyword">second</span>
-</code></pre></span><span i="332"><p>以下實例我們使用了多個參數來測試 redis 性能：</p>
-</span><span i="333"><pre><code>  <span class="hljs-symbol">$</span> edis-benchmark -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> -p <span class="hljs-number">6379</span> -t <span class="hljs-keyword">set</span>,lpush <span class="hljs-comment">-n 10000 -q</span>
+</code></pre></span><span i="322"><p>以下實例我們使用了多個參數來測試 redis 性能：</p>
+</span><span i="323"><pre><code>  <span class="hljs-symbol">$</span> edis-benchmark -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> -p <span class="hljs-number">6379</span> -t <span class="hljs-keyword">set</span>,lpush <span class="hljs-comment">-n 10000 -q</span>
   <span class="hljs-keyword">SET</span>: 113636.37 requests <span class="hljs-comment">per second</span>
   LPUSH: 153846.16 requests <span class="hljs-comment">per second</span>
 </code></pre></span></blockquote>

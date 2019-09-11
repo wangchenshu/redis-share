@@ -290,17 +290,7 @@ PONG
 ##### 實例
 > 測試環境如下:
   ```
-  > 測試環境如下:
-  ```
   ＄
-  OS: Ubuntu 18.04 bionic
-  Kernel: x86_64 Linux 5.0.0-27-generic
-  Shell: fish 2.7.1
-  CPU: Intel Core i5-8265U @ 8x 3.9GHz [53.0°C]
-  GPU: Mesa DRI Intel(R) HD Graphics (Whiskey Lake 3x8 GT2)
-  RAM: 4088MiB / 11857MiB
-  ```
-  $
   OS: Ubuntu 18.04 bionic
   Kernel: x86_64 Linux 5.0.0-27-generic
   Shell: fish 2.7.1
