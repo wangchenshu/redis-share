@@ -106,199 +106,200 @@ PONG
 7) "cluster-announce-ip"
 8) ""
 9) "unixsocket"
-...
+以下略過
 127.0.0.1:6379> EXIT
 ```
 ### Redis 數據類型
 ---
-* string（字串）
-  > string 是 redis 最基本的類型，你可以理解成與 Memcached 一模一樣的類型，一個 key 對應一個 value。
-  ```
-  $ redis-cli
-  127.0.0.1:6379> SET name walter
-  OK
-  127.0.0.1:6379> GET name
-  "walter"
-  127.0.0.1:6379> DEL name
-  (integer) 1
-  127.0.0.1:6379> GET name
-  (nil)
-  ```
+#### string（字串）
+##### string 是 redis 最基本的類型，你可以理解成與 Memcached 一模一樣的類型，一個 key 對應一個 value。
+```
+$ redis-cli
+127.0.0.1:6379> SET name walter
+OK
+127.0.0.1:6379> GET name
+"walter"
+127.0.0.1:6379> DEL name
+(integer) 1
+127.0.0.1:6379> GET name
+(nil)
+```
 
-* hash（雜湊(哈希)）
-  > Redis hash 是一個鍵值(key=>value)對集合。
-  > Redis hash 是一個 string 類型的 field 和 value 的映射表，hash 特別適合用於存儲對象。
-  ```
-  $ redis-cli
-  127.0.0.1:6379> HMSET user id 1 name walter
-  OK
-  127.0.0.1:6379> HMGET user id
-  1) "1"
-  127.0.0.1:6379> HMGET user name
-  1) "walter"
-  127.0.0.1:6379> DEL user
-  (integer) 1
-  127.0.0.1:6379> HMGET user id
-  1) (nil)
-  ```
-* list（列表）
-  > Redis 列表是簡單的字符串列表，按照插入順序排序。你可以添加一個元素到列表的頭部（左邊）或者尾部（右邊）。
-  ```
-  $ redis-cli
-  127.0.0.1:6379> LPUSH id 1
-  (integer) 1
-  127.0.0.1:6379> LPUSH id 2 3
-  (integer) 3
-  127.0.0.1:6379> LRANGE id 1 3
-  1) "2"
-  2) "1"
-  127.0.0.1:6379> LRANGE id 0 2
-  1) "3"
-  2) "2"
-  3) "1"
-  127.0.0.1:6379> RPUSH id 4
-  (integer) 4
-  127.0.0.1:6379> LRANGE id 0 3
-  1) "3"
-  2) "2"
-  3) "1"
-  4) "4"
-  127.0.0.1:6379> DEL id
+#### hash（雜湊(哈希)）
+##### Redis hash 是一個鍵值(key=>value)對集合。
+
+##### Redis hash 是一個 string 類型的 field 和 value 的映射表，hash 特別適合用於存儲對象。
+```
+$ redis-cli
+127.0.0.1:6379> HMSET user id 1 name walter
+OK
+127.0.0.1:6379> HMGET user id
+1) "1"
+127.0.0.1:6379> HMGET user name
+1) "walter"
+127.0.0.1:6379> DEL user
+(integer) 1
+127.0.0.1:6379> HMGET user id
+1) (nil)
+```
+#### list（列表）
+##### Redis 列表是簡單的字符串列表，按照插入順序排序。你可以添加一個元素到列表的頭部（左邊）或者尾部（右邊）。
+```
+$ redis-cli
+127.0.0.1:6379> LPUSH id 1
+(integer) 1
+127.0.0.1:6379> LPUSH id 2 3
+(integer) 3
+127.0.0.1:6379> LRANGE id 1 3
+1) "2"
+2) "1"
+127.0.0.1:6379> LRANGE id 0 2
+1) "3"
+2) "2"
+3) "1"
+127.0.0.1:6379> RPUSH id 4
+(integer) 4
+127.0.0.1:6379> LRANGE id 0 3
+1) "3"
+2) "2"
+3) "1"
+4) "4"
+127.0.0.1:6379> DEL id
 (integer) 1
 127.0.0.1:6379> LRANGE id 0 3
 (empty list or set)
-  ```
-* set（無序不重複的字串集合）
-  > Redis的Set是string類型的無序集合。
-  
-  ```
-  $ redis-cli
-  127.0.0.1:6379> SADD id 1 2 3
-  (integer) 3
-  127.0.0.1:6379> SMEMBERS id
-  1) "1"
-  2) "2"
-  3) "3"
-  127.0.0.1:6379> DEL id
-  (integer) 1
-  127.0.0.1:6379> SMEMBERS id
-  (empty list or set)
-  ```
-* zset (有序不重複的字串集合)
-  > Redis zset 和 set 一樣也是string類型元素的集合，且不允許重複的成員。不同的是每個元素都會關聯一個double類型的 score。
-  
-  ```
-  $ redis-cli
-  127.0.0.1:6379> ZADD score 10 walter
-  (integer) 1
-  127.0.0.1:6379> ZADD score 20 jack
-  (integer) 1
-  127.0.0.1:6379> ZADD score 25 tom
-  (integer) 1
-  127.0.0.1:6379> ZRANGEBYSCORE score -inf +inf
-  1) "walter"
-  2) "jack"
-  3) "tom"
-  127.0.0.1:6379> ZRANGEBYSCORE score -inf +inf withscores
-  1) "walter"
-  2) "10"
-  3) "jack"
-  4) "20"
-  5) "tom"
-  6) "25"
-  127.0.0.1:6379> ZADD score 20 peter
-  (integer) 1
-  127.0.0.1:6379> ZRANGEBYSCORE score -inf +inf withscores
-  1) "walter"
-  2) "10"
-  3) "jack"
-  4) "20"
-  5) "peter"
-  6) "20"
-  7) "tom"
-  8) "25"
-  ```
+```
+#### set（無序不重複的字串集合）
+##### Redis的Set是string類型的無序集合。
+```
+$ redis-cli
+127.0.0.1:6379> SADD id 1 2 3
+(integer) 3
+127.0.0.1:6379> SMEMBERS id
+1) "1"
+2) "2"
+3) "3"
+127.0.0.1:6379> DEL id
+(integer) 1
+127.0.0.1:6379> SMEMBERS id
+(empty list or set)
+```
+#### zset (有序不重複的字串集合)
+##### Redis zset 和 set 一樣也是string類型元素的集合，且不允許重複的成員。
+
+##### 不同的是每個元素都會關聯一個double類型的 score。
+```
+$ redis-cli
+127.0.0.1:6379> ZADD score 10 walter
+(integer) 1
+127.0.0.1:6379> ZADD score 20 jack
+(integer) 1
+127.0.0.1:6379> ZADD score 25 tom
+(integer) 1
+127.0.0.1:6379> ZRANGEBYSCORE score -inf +inf
+1) "walter"
+2) "jack"
+3) "tom"
+127.0.0.1:6379> ZRANGEBYSCORE score -inf +inf withscores
+1) "walter"
+2) "10"
+3) "jack"
+4) "20"
+5) "tom"
+6) "25"
+127.0.0.1:6379> ZADD score 20 peter
+(integer) 1
+127.0.0.1:6379> ZRANGEBYSCORE score -inf +inf withscores
+1) "walter"
+2) "10"
+3) "jack"
+4) "20"
+5) "peter"
+6) "20"
+7) "tom"
+8) "25"
+```
 
 ### Redis 命令
 ---
 #### 語法
-> Redis 客戶端的基本語法為：
-
-  ```
-  $ redis-cli
-  127.0.0.1:6379> PING
-  PONG
-  127.0.0.1:6379>
-  ```
-> 在以上實例中我們連接到本地的 redis 服務並執行 PING 命令，該命令用於檢測 redis 服務是否啟動。
+##### Redis 客戶端的基本語法為：
+```
+$ redis-cli
+127.0.0.1:6379> PING
+PONG
+127.0.0.1:6379>
+```
+##### 在以上實例中我們連接到本地的 redis 服務並執行 PING 命令，該命令用於檢測 redis 服務是否啟動。
 
 #### 在遠程服務上執行命令
-> 如果需要在遠程 redis 服務上執行命令，同樣我們使用的也是 redis-cli 命令。
+##### 如果需要在遠程 redis 服務上執行命令，同樣我們使用的也是 redis-cli 命令。
+```
+$ redis-cli -h 127.0.0.1 -p 6379
+127.0.0.1:6379> PING
+PONG
+127.0.0.1:6379> INFO
+# Server
+redis_version:4.0.9
+redis_git_sha1:00000000
+redis_git_dirty:0
+redis_build_id:9435c3c2879311f3
+redis_mode:standalone
+os:Linux 5.0.0-27-generic x86_64
+arch_bits:64
+multiplexing_api:epoll
+以下略過
+```
+  
+#### Redis 安全
+##### 我們可以通過 redis 的配置文件設置密碼參數，這樣客戶端連接到 redis 服務就需要密碼驗證，
 
-  ```
-  $ redis-cli -h 127.0.0.1 -p 6379
-  127.0.0.1:6379> PING
-  PONG
-  127.0.0.1:6379> INFO
-  # Server
-  redis_version:4.0.9
-  redis_git_sha1:00000000
-  redis_git_dirty:0
-  redis_build_id:9435c3c2879311f3
-  redis_mode:standalone
-  os:Linux 5.0.0-27-generic x86_64
-  arch_bits:64
-  multiplexing_api:epoll
-  ... 以下略過
-  ```
-  
-  #### Redis 安全
-  > 我們可以通過 redis 的配置文件設置密碼參數，這樣客戶端連接到 redis 服務就需要密碼驗證，這樣可以讓你的 redis 服務更安全。
-  > 
-  > 默認情況下 requirepass 參數是空的，這就意味著你無需通過密碼驗證就可以連接到 redis 服務。
+##### 這樣可以讓你的 redis 服務更安全。
 
-> 你可以通過以下命令來修改該參數：
-  ```
-  $ redis-cli
-  127.0.0.1:6379>  CONFIG get requirepass
-  1) "requirepass"
-  2) ""
-  ```
+##### 默認情況下 requirepass 參數是空的，這就意味著你無需通過密碼驗證就可以連接到 redis 服務。
+
+###### 你可以通過以下命令來修改該參數：
+```
+$ redis-cli
+127.0.0.1:6379>  CONFIG get requirepass
+1) "requirepass"
+2) ""
+```
   
-  > 設置密碼後，客戶端連接 redis 服務就需要密碼驗證，否則無法執行命令。
-  ```
-  $
-  127.0.0.1:6379> CONFIG set requirepass "mypassword"
-  OK
-  127.0.0.1:6379>  CONFIG get requirepass
-  (error) NOAUTH Authentication required.
-  127.0.0.1:6379> AUTH "mypassword"
-  OK
-  127.0.0.1:6379>  CONFIG get requirepass
-  1) "requirepass"
-  2) "mypassword"
-  ```
+###### 設置密碼後，客戶端連接 redis 服務就需要密碼驗證，否則無法執行命令。
+```
+$
+127.0.0.1:6379> CONFIG set requirepass "mypassword"
+OK
+127.0.0.1:6379>  CONFIG get requirepass
+(error) NOAUTH Authentication required.
+127.0.0.1:6379> AUTH "mypassword"
+OK
+127.0.0.1:6379>  CONFIG get requirepass
+1) "requirepass"
+2) "mypassword"
+```
   
-  #### Redis 性能測試
-  ---
-  * Redis 性能測試是通過同時執行多個命令實現的。
-  * Redis 性能測試的基本命令如下：
-    ```
-    $ redis-benchmark [option] [option value]
-    ```
-    
+#### Redis 性能測試
+---
+* Redis 性能測試是通過同時執行多個命令實現的。
+* Redis 性能測試的基本命令如下：
+```
+$ redis-benchmark [option] [option value]
+```
+
 ##### 實例
-> 測試環境如下:
-  ```
-  ＄
-  OS: Ubuntu 18.04 bionic
-  Kernel: x86_64 Linux 5.0.0-27-generic
-  Shell: fish 2.7.1
-  CPU: Intel Core i5-8265U @ 8x 3.9GHz [53.0°C]
-  GPU: Mesa DRI Intel(R) HD Graphics (Whiskey Lake 3x8 GT2)
-  RAM: 4088MiB / 11857MiB
-  ```
-> 以下實例同時執行 10000 個請求來檢測性能：
+#####  測試環境如下:
+```
+＄
+OS: Ubuntu 18.04 bionic
+Kernel: x86_64 Linux 5.0.0-27-generic
+Shell: fish 2.7.1
+CPU: Intel Core i5-8265U @ 8x 3.9GHz [53.0°C]
+GPU: Mesa DRI Intel(R) HD Graphics (Whiskey Lake 3x8 GT2)
+RAM: 4088MiB / 11857MiB
+```
+##### 以下實例同時執行 10000 個請求來檢測性能：
 ```
 $ redis-benchmark -n 10000  -q
 PING_INLINE: 89285.71 requests per second
@@ -320,9 +321,9 @@ LRANGE_500 (first 450 elements): 147058.81 requests per second
 LRANGE_600 (first 600 elements): 149253.73 requests per second
 MSET (10 keys): 125000.00 requests per second
 ```
-> 以下實例我們使用了多個參數來測試 redis 性能：
-  ```
-  $ edis-benchmark -h 127.0.0.1 -p 6379 -t set,lpush -n 10000 -q
-  SET: 113636.37 requests per second
-  LPUSH: 153846.16 requests per second
-  ```
+##### 以下實例我們使用了多個參數來測試 redis 性能：
+```
+$ edis-benchmark -h 127.0.0.1 -p 6379 -t set,lpush -n 10000 -q
+SET: 113636.37 requests per second
+LPUSH: 153846.16 requests per second
+```

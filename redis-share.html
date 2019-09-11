@@ -896,14 +896,12 @@ PONG
 <span class="hljs-number">7</span>) <span class="hljs-string">"cluster-announce-ip"</span>
 <span class="hljs-number">8</span>) <span class="hljs-string">""</span>
 <span class="hljs-number">9</span>) <span class="hljs-string">"unixsocket"</span>
-...
+以下略過
 <span class="hljs-meta">127.0.0.1:6379&gt;</span> EXIT
 </code></pre></span><span i="113"><h3 id="redis-">Redis 數據類型</h3>
 </span><span i="114"><hr>
-</span><span i="115"><ul>
-<li><span i="115"><p>string（字串）</p>
-</span><span i="116"><blockquote>
-<span i="116"><p>string 是 redis 最基本的類型，你可以理解成與 Memcached 一模一樣的類型，一個 key 對應一個 value。</p>
+</span><span i="115"><h4 id="string-">string（字串）</h4>
+</span><span i="116"><h5 id="string-redis-memcached-key-value-">string 是 redis 最基本的類型，你可以理解成與 Memcached 一模一樣的類型，一個 key 對應一個 value。</h5>
 </span><span i="117"><pre><code>$ redis-cli
 <span class="hljs-meta">127.0.0.1:6379&gt;</span> SET name walter
 OK
@@ -913,13 +911,10 @@ OK
 (integer) <span class="hljs-number">1</span>
 <span class="hljs-meta">127.0.0.1:6379&gt;</span> GET name
 (<span class="hljs-literal">nil</span>)
-</code></pre></span></blockquote>
-</span></li>
-<li><span i="128"><p>hash（雜湊(哈希)）</p>
-</span><span i="129"><blockquote>
-<span i="130"><p>Redis hash 是一個鍵值(key=&gt;value)對集合。
-Redis hash 是一個 string 類型的 field 和 value 的映射表，hash 特別適合用於存儲對象。</p>
-</span><span i="131"><pre><code>$ redis-cli
+</code></pre></span><span i="129"><h4 id="hash-">hash（雜湊(哈希)）</h4>
+</span><span i="130"><h5 id="redis-hash-key-value-">Redis hash 是一個鍵值(key=&gt;value)對集合。</h5>
+</span><span i="132"><h5 id="redis-hash-string-field-value-hash-">Redis hash 是一個 string 類型的 field 和 value 的映射表，hash 特別適合用於存儲對象。</h5>
+</span><span i="133"><pre><code>$ redis-cli
 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">6379</span>&gt; HMSET <span class="hljs-keyword">user</span> <span class="hljs-title">id</span> <span class="hljs-number">1</span> name walter
 OK
 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">6379</span>&gt; HMGET <span class="hljs-keyword">user</span> <span class="hljs-title">id</span>
@@ -930,11 +925,9 @@ OK
 <span class="hljs-title">(integer</span>) <span class="hljs-number">1</span>
 <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">6379</span>&gt; HMGET <span class="hljs-keyword">user</span> <span class="hljs-title">id</span>
 <span class="hljs-number">1</span>) (nil)
-</code></pre></span></blockquote>
-</span></li>
-<li><span i="143">list（列表）</span><span i="144"><blockquote>
-<span i="144"><p>Redis 列表是簡單的字符串列表，按照插入順序排序。你可以添加一個元素到列表的頭部（左邊）或者尾部（右邊）。</p>
-</span><span i="145"><pre><code>$ redis-cli
+</code></pre></span><span i="146"><h4 id="list-">list（列表）</h4>
+</span><span i="147"><h5 id="redis-">Redis 列表是簡單的字符串列表，按照插入順序排序。你可以添加一個元素到列表的頭部（左邊）或者尾部（右邊）。</h5>
+</span><span i="148"><pre><code>$ redis-cli
 <span class="hljs-meta">127.0.0.1:6379&gt;</span> LPUSH id <span class="hljs-number">1</span>
 (integer) <span class="hljs-number">1</span>
 <span class="hljs-meta">127.0.0.1:6379&gt;</span> LPUSH id <span class="hljs-number">2</span> <span class="hljs-number">3</span>
@@ -957,13 +950,9 @@ OK
 (integer) <span class="hljs-number">1</span>
 <span class="hljs-meta">127.0.0.1:6379&gt;</span> LRANGE id <span class="hljs-number">0</span> <span class="hljs-number">3</span>
 (empty list <span class="hljs-keyword">or</span> set)
-</code></pre></span></blockquote>
-</span></li>
-<li><span i="169"><p>set（無序不重複的字串集合）</p>
-</span><span i="170"><blockquote>
-<span i="170"><p>Redis的Set是string類型的無序集合。</p>
-</span></blockquote>
-</span><span i="173"><pre><code>$ redis-cli
+</code></pre></span><span i="173"><h4 id="set-">set（無序不重複的字串集合）</h4>
+</span><span i="174"><h5 id="redis-set-string-">Redis的Set是string類型的無序集合。</h5>
+</span><span i="175"><pre><code>$ redis-cli
 <span class="hljs-meta">127.0.0.1:6379&gt;</span> SADD id <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>
 (integer) <span class="hljs-number">3</span>
 <span class="hljs-meta">127.0.0.1:6379&gt;</span> SMEMBERS id
@@ -974,12 +963,10 @@ OK
 (integer) <span class="hljs-number">1</span>
 <span class="hljs-meta">127.0.0.1:6379&gt;</span> SMEMBERS id
 (empty list <span class="hljs-keyword">or</span> set)
-</code></pre></span></li>
-<li><span i="185"><p>zset (有序不重複的字串集合)</p>
-</span><span i="186"><blockquote>
-<span i="186"><p>Redis zset 和 set 一樣也是string類型元素的集合，且不允許重複的成員。不同的是每個元素都會關聯一個double類型的 score。</p>
-</span></blockquote>
-</span><span i="189"><pre><code>$ redis-<span class="hljs-keyword">cli</span>
+</code></pre></span><span i="188"><h4 id="zset-">zset (有序不重複的字串集合)</h4>
+</span><span i="189"><h5 id="redis-zset-set-string-">Redis zset 和 set 一樣也是string類型元素的集合，且不允許重複的成員。</h5>
+</span><span i="191"><h5 id="-double-score-">不同的是每個元素都會關聯一個double類型的 score。</h5>
+</span><span i="192"><pre><code>$ redis-<span class="hljs-keyword">cli</span>
 <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; ZADD score <span class="hljs-number">10</span> walter
 (integer) <span class="hljs-number">1</span>
 <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; ZADD score <span class="hljs-number">20</span> jack
@@ -1008,79 +995,69 @@ OK
 <span class="hljs-number">6</span>) <span class="hljs-string">"20"</span>
 <span class="hljs-number">7</span>) <span class="hljs-string">"tom"</span>
 <span class="hljs-number">8</span>) <span class="hljs-string">"25"</span>
+</code></pre></span><span i="224"><h3 id="redis-">Redis 命令</h3>
+</span><span i="225"><hr>
+</span><span i="226"><h4 id="-">語法</h4>
+</span><span i="227"><h5 id="redis-">Redis 客戶端的基本語法為：</h5>
+</span><span i="228"><pre><code>$ redis-cli
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> PING
+PONG
+<span class="hljs-meta">127.0.0.1:6379&gt;</span>
+</code></pre></span><span i="234"><h5 id="-redis-ping-redis-">在以上實例中我們連接到本地的 redis 服務並執行 PING 命令，該命令用於檢測 redis 服務是否啟動。</h5>
+</span><span i="236"><h4 id="-">在遠程服務上執行命令</h4>
+</span><span i="237"><h5 id="-redis-redis-cli-">如果需要在遠程 redis 服務上執行命令，同樣我們使用的也是 redis-cli 命令。</h5>
+</span><span i="238"><pre><code>$ redis-<span class="hljs-keyword">cli</span> -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> -p <span class="hljs-number">6379</span>
+<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">6379</span>&gt; <span class="hljs-built_in">PING</span>
+PONG
+<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">6379</span>&gt; INFO
+<span class="hljs-meta"># Server</span>
+<span class="hljs-symbol">redis_version:</span><span class="hljs-number">4.0</span><span class="hljs-number">.9</span>
+<span class="hljs-symbol">redis_git_sha1:</span><span class="hljs-number">00000000</span>
+<span class="hljs-symbol">redis_git_dirty:</span><span class="hljs-number">0</span>
+<span class="hljs-symbol">redis_build_id:</span><span class="hljs-number">9435</span>c3c2879311f3
+<span class="hljs-symbol">redis_mode:</span>standalone
+<span class="hljs-symbol">os:</span>Linux <span class="hljs-number">5.0</span><span class="hljs-number">.0</span><span class="hljs-number">-27</span>-generic x86_64
+<span class="hljs-symbol">arch_bits:</span><span class="hljs-number">64</span>
+<span class="hljs-symbol">multiplexing_api:</span>epoll
+以下略過
+</code></pre></span><span i="255"><h4 id="redis-">Redis 安全</h4>
+</span><span i="256"><h5 id="-redis-redis-">我們可以通過 redis 的配置文件設置密碼參數，這樣客戶端連接到 redis 服務就需要密碼驗證，</h5>
+</span><span i="258"><h5 id="-redis-">這樣可以讓你的 redis 服務更安全。</h5>
+</span><span i="260"><h5 id="-requirepass-redis-">默認情況下 requirepass 參數是空的，這就意味著你無需通過密碼驗證就可以連接到 redis 服務。</h5>
+</span><span i="262"><h6 id="-">你可以通過以下命令來修改該參數：</h6>
+</span><span i="263"><pre><code>$ redis-cli
+<span class="hljs-meta">127.0.0.1:6379&gt;</span>  CONFIG get requirepass
+<span class="hljs-number">1</span>) <span class="hljs-string">"requirepass"</span>
+<span class="hljs-number">2</span>) <span class="hljs-string">""</span>
+</code></pre></span><span i="270"><h6 id="-redis-">設置密碼後，客戶端連接 redis 服務就需要密碼驗證，否則無法執行命令。</h6>
+</span><span i="271"><pre><code>$
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> CONFIG set requirepass <span class="hljs-string">"mypassword"</span>
+OK
+<span class="hljs-meta">127.0.0.1:6379&gt;</span>  CONFIG get requirepass
+(error) NOAUTH Authentication required.
+<span class="hljs-meta">127.0.0.1:6379&gt;</span> AUTH <span class="hljs-string">"mypassword"</span>
+OK
+<span class="hljs-meta">127.0.0.1:6379&gt;</span>  CONFIG get requirepass
+<span class="hljs-number">1</span>) <span class="hljs-string">"requirepass"</span>
+<span class="hljs-number">2</span>) <span class="hljs-string">"mypassword"</span>
+</code></pre></span><span i="284"><h4 id="redis-">Redis 性能測試</h4>
+</span><span i="285"><hr>
+</span><span i="286"><ul>
+<li><span i="286">Redis 性能測試是通過同時執行多個命令實現的。</span></li>
+<li><span i="287">Redis 性能測試的基本命令如下：</span><span i="288"><pre><code><span class="hljs-symbol">$</span> redis-benchmark [<span class="hljs-keyword">option</span>] [<span class="hljs-keyword">option</span> value]
 </code></pre></span></li>
 </ul>
-</span><span i="221"><h3 id="redis-">Redis 命令</h3>
-</span><span i="222"><hr>
-</span><span i="223"><h4 id="-">語法</h4>
-</span><span i="224"><blockquote>
-<span i="224"><p>Redis 客戶端的基本語法為：</p>
-</span></blockquote>
-</span><span i="226"><pre><code>  $ redis-<span class="hljs-keyword">cli</span>
-  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; PING
-  PONG
-  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt;
-</code></pre></span><span i="232"><blockquote>
-<span i="232"><p>在以上實例中我們連接到本地的 redis 服務並執行 PING 命令，該命令用於檢測 redis 服務是否啟動。</p>
-</span></blockquote>
-</span><span i="234"><h4 id="-">在遠程服務上執行命令</h4>
-</span><span i="235"><blockquote>
-<span i="235"><p>如果需要在遠程 redis 服務上執行命令，同樣我們使用的也是 redis-cli 命令。</p>
-</span></blockquote>
-</span><span i="237"><pre><code>  $ redis-cli -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> -p <span class="hljs-number">6379</span>
-  <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">6379</span>&gt; PING
-  PONG
-  <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">6379</span>&gt; INFO
-  <span class="hljs-meta"># Server</span>
-<span class="hljs-symbol">  redis_version:</span><span class="hljs-number">4.0</span><span class="hljs-number">.9</span>
-<span class="hljs-symbol">  redis_git_sha1:</span><span class="hljs-number">00000000</span>
-<span class="hljs-symbol">  redis_git_dirty:</span><span class="hljs-number">0</span>
-<span class="hljs-symbol">  redis_build_id:</span><span class="hljs-number">9435</span>c3c2879311f3
-<span class="hljs-symbol">  redis_mode:</span>standalone
-<span class="hljs-symbol">  os:</span>Linux <span class="hljs-number">5.0</span><span class="hljs-number">.0</span><span class="hljs-number">-27</span>-generic x86_64
-<span class="hljs-symbol">  arch_bits:</span><span class="hljs-number">64</span>
-<span class="hljs-symbol">  multiplexing_api:</span>epoll
-  ... 以下略過
-</code></pre></span><span i="254"><h4 id="redis-">Redis 安全</h4>
-</span><span i="255"><blockquote>
-<span i="255"><p>我們可以通過 redis 的配置文件設置密碼參數，這樣客戶端連接到 redis 服務就需要密碼驗證，這樣可以讓你的 redis 服務更安全。</p>
-</span><span i="257"><p>默認情況下 requirepass 參數是空的，這就意味著你無需通過密碼驗證就可以連接到 redis 服務。</p>
-</span><span i="259"><p>你可以通過以下命令來修改該參數：</p>
-</span><span i="260"><pre><code>  $ redis-<span class="hljs-keyword">cli</span>
-  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt;  CONFIG get requirepass
-  <span class="hljs-number">1</span>) <span class="hljs-string">"requirepass"</span>
-  <span class="hljs-number">2</span>) <span class="hljs-string">""</span>
-</code></pre></span><span i="267"><p>設置密碼後，客戶端連接 redis 服務就需要密碼驗證，否則無法執行命令。</p>
-</span><span i="268"><pre><code>  $
-  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; CONFIG set requirepass <span class="hljs-string">"mypassword"</span>
-  OK
-  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt;  CONFIG get requirepass
-  (error) NOAUTH Authentication required.
-  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt; AUTH <span class="hljs-string">"mypassword"</span>
-  OK
-  <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">6379</span>&gt;  CONFIG get requirepass
-  <span class="hljs-number">1</span>) <span class="hljs-string">"requirepass"</span>
-  <span class="hljs-number">2</span>) <span class="hljs-string">"mypassword"</span>
-</code></pre></span></blockquote>
-</span><span i="281"><h4 id="redis-">Redis 性能測試</h4>
-</span><span i="282"><hr>
-</span><span i="283"><ul>
-<li><span i="283">Redis 性能測試是通過同時執行多個命令實現的。</span></li>
-<li><span i="284">Redis 性能測試的基本命令如下：</span><span i="285"><pre><code><span class="hljs-symbol">$</span> redis-benchmark [<span class="hljs-keyword">option</span>] [<span class="hljs-keyword">option</span> value]
-</code></pre></span></li>
-</ul>
-</span><span i="289"><h5 id="-">實例</h5>
-</span><span i="290"><blockquote>
-<span i="290"><p>測試環境如下:</p>
-</span><span i="291"><pre><code>  ＄
-<span class="hljs-symbol">  OS:</span> Ubuntu <span class="hljs-number">18.04</span> bionic
-<span class="hljs-symbol">  Kernel:</span> x86_64 Linux <span class="hljs-number">5.0</span><span class="hljs-number">.0</span><span class="hljs-number">-27</span>-generic
-<span class="hljs-symbol">  Shell:</span> fish <span class="hljs-number">2.7</span><span class="hljs-number">.1</span>
-<span class="hljs-symbol">  CPU:</span> Intel Core i5<span class="hljs-number">-8265</span>U @ <span class="hljs-number">8</span>x <span class="hljs-number">3.9</span>GHz [<span class="hljs-number">53.0</span>°C]
-<span class="hljs-symbol">  GPU:</span> Mesa DRI Intel(R) HD Graphics (Whiskey Lake <span class="hljs-number">3</span>x8 GT2)
-<span class="hljs-symbol">  RAM:</span> <span class="hljs-number">4088</span>MiB / <span class="hljs-number">11857</span>MiB
-</code></pre></span><span i="300"><p>以下實例同時執行 10000 個請求來檢測性能：</p>
-</span><span i="301"><pre><code>$ redis-benchmark -n 10000  -q
+</span><span i="292"><h5 id="-">實例</h5>
+</span><span i="293"><h5 id="-">測試環境如下:</h5>
+</span><span i="294"><pre><code>＄
+<span class="hljs-symbol">OS:</span> Ubuntu <span class="hljs-number">18.04</span> bionic
+<span class="hljs-symbol">Kernel:</span> x86_64 Linux <span class="hljs-number">5.0</span><span class="hljs-number">.0</span><span class="hljs-number">-27</span>-generic
+<span class="hljs-symbol">Shell:</span> fish <span class="hljs-number">2.7</span><span class="hljs-number">.1</span>
+<span class="hljs-symbol">CPU:</span> Intel Core i5<span class="hljs-number">-8265</span>U @ <span class="hljs-number">8</span><span class="hljs-built_in">x</span> <span class="hljs-number">3.9</span>GHz [<span class="hljs-number">53.0</span>°C]
+<span class="hljs-symbol">GPU:</span> Mesa DRI Intel(R) HD Graphics (Whiskey Lake <span class="hljs-number">3</span>x8 GT2)
+<span class="hljs-symbol">RAM:</span> <span class="hljs-number">4088</span>MiB / <span class="hljs-number">11857</span>MiB
+</code></pre></span><span i="303"><h5 id="-10000-">以下實例同時執行 10000 個請求來檢測性能：</h5>
+</span><span i="304"><pre><code>$ redis-benchmark -n 10000  -q
 PING_INLINE: 89285.71 requests per second
 PING_BULK: 151515.16 requests per second
 <span class="hljs-keyword">SET</span>: <span class="hljs-number">151515.16</span> requests per <span class="hljs-keyword">second</span>
@@ -1099,10 +1076,9 @@ LRANGE_300 (<span class="hljs-keyword">first</span> <span class="hljs-number">30
 LRANGE_500 (<span class="hljs-keyword">first</span> <span class="hljs-number">450</span> elements): <span class="hljs-number">147058.81</span> requests per <span class="hljs-keyword">second</span>
 LRANGE_600 (<span class="hljs-keyword">first</span> <span class="hljs-number">600</span> elements): <span class="hljs-number">149253.73</span> requests per <span class="hljs-keyword">second</span>
 MSET (<span class="hljs-number">10</span> <span class="hljs-keyword">keys</span>): <span class="hljs-number">125000.00</span> requests per <span class="hljs-keyword">second</span>
-</code></pre></span><span i="322"><p>以下實例我們使用了多個參數來測試 redis 性能：</p>
-</span><span i="323"><pre><code>  <span class="hljs-symbol">$</span> edis-benchmark -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> -p <span class="hljs-number">6379</span> -t <span class="hljs-keyword">set</span>,lpush <span class="hljs-comment">-n 10000 -q</span>
-  <span class="hljs-keyword">SET</span>: 113636.37 requests <span class="hljs-comment">per second</span>
-  LPUSH: 153846.16 requests <span class="hljs-comment">per second</span>
-</code></pre></span></blockquote>
-</span></body>
+</code></pre></span><span i="325"><h5 id="-redis-">以下實例我們使用了多個參數來測試 redis 性能：</h5>
+</span><span i="326"><pre><code><span class="hljs-symbol">$</span> edis-benchmark -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> -p <span class="hljs-number">6379</span> -t <span class="hljs-keyword">set</span>,lpush <span class="hljs-comment">-n 10000 -q</span>
+<span class="hljs-keyword">SET</span>: 113636.37 requests <span class="hljs-comment">per second</span>
+LPUSH: 153846.16 requests <span class="hljs-comment">per second</span>
+</code></pre></span></body>
 </html>
